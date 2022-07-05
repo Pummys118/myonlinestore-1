@@ -28,9 +28,9 @@ stages:
         Dockerfile: '**/Dockerfile-multistage'
         tags: '$(tag)'
     - task: KubernetesManifest@0
-         inputs:
-           action: 'deploy'
-           kubernetesServiceConnection: 'gitops-cluster'
-           manifests: |
+      inputs:
+        action: 'deploy'
+        kubernetesServiceConnection: 'gitops-cluster'
+        manifests: |
              manifests/deployment.yml 
              manifests/service.yml
